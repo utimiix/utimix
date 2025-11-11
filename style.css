@@ -113,6 +113,7 @@ body {
   padding: 20px;
 }
 
+/* Produto */
 .produto {
   background: #fff;
   border: 1px solid #ddd;
@@ -226,16 +227,72 @@ body {
   text-align: center;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .produto {
-    width: calc(50% - 20px); /* 2 produtos por linha em telas médias */
+/* Carrinho Flutuante (no canto inferior esquerdo) */
+.carrinho-flutuante {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #007bff; /* Cor do fundo */
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+}
+
+.carrinho-flutuante img {
+  width: 40px;
+  height: 40px;
+}
+
+/* WhatsApp flutuante */
+.whatsapp-flutuante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;  /* Tamanho reduzido */
+  height: 60px; /* Tamanho reduzido */
+  background-color: #25d366;  /* Cor do WhatsApp */
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: flutuar 1.5s ease-in-out infinite;  /* Animação para flutuar */
+}
+
+.whatsapp-flutuante img {
+  width: 40px;  /* Tamanho do ícone do WhatsApp */
+  height: 40px; /* Tamanho do ícone do WhatsApp */
+}
+
+/* Animação para o ícone flutuar */
+@keyframes flutuar {
+  0% {
+    transform: translateY(0); /* Começa na posição normal */
+  }
+  50% {
+    transform: translateY(-10px); /* Sobe 10px no meio da animação */
+  }
+  100% {
+    transform: translateY(0); /* Volta para a posição normal */
   }
 }
 
-@media (max-width: 480px) {
+/* Responsividade - Layout para dispositivos móveis */
+@media (max-width: 768px) {
+  /* Ajuste para mostrar 2 produtos por linha */
   .produto {
-    width: 100%; /* 1 produto por linha em telas pequenas */
+    width: calc(50% - 20px); /* 2 produtos por linha */
+  }
+
+  /* Ajuste nas imagens para torná-las menores em dispositivos móveis */
+  .produto img {
+    height: 150px; /* Menor altura para imagens */
   }
 
   .header-container input {
@@ -252,55 +309,29 @@ body {
   }
 }
 
-/* WhatsApp flutuante */
-.whatsapp-flutuante {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;  /* Tamanho reduzido */
-  height: 60px; /* Tamanho reduzido */
-  background-color: #25d366;  /* Cor do WhatsApp */
-  border-radius: 50%;  /* Tornar o botão redondo */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: flutuar 1.5s ease-in-out infinite;  /* Animação para flutuar */
-}
-
-.whatsapp-flutuante img {
-  width: 40px;  /* Tamanho do ícone do WhatsApp */
-  height: 40px; /* Tamanho do ícone do WhatsApp */
-  border-radius: 50%;  /* Garantir que a imagem do WhatsApp seja circular */
-}
-
-/* Animação para o ícone flutuar */
-@keyframes flutuar {
-  0% {
-    transform: translateY(0); /* Começa na posição normal */
+@media (max-width: 480px) {
+  /* Ajuste para 1 produto por linha em telas muito pequenas */
+  .produto {
+    width: 100%; /* 1 produto por linha em telas pequenas */
   }
-  50% {
-    transform: translateY(-10px); /* Sobe 10px no meio da animação */
+
+  /* Imagens ainda menores */
+  .produto img {
+    height: 120px;
   }
-  100% {
-    transform: translateY(0); /* Volta para a posição normal */
+
+  .header-container input {
+    width: 70%; /* Ajuste para mais espaço na barra de pesquisa */
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu a {
+    padding: 8px 12px;
   }
 }
 
-/* Footer */
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 5px;
-}
-footer a:hover {
-  text-decoration: underline;
-}
+/* Fim do CSS */
