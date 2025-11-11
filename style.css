@@ -349,4 +349,119 @@ body {
   .banner-img {
     height: 180px; /* Altura reduzida no banner */
   }
+} 
+
+/* Banner */
+#banner {
+    width: 100%;
+    max-height: 300px; /* Reduzido para dispositivos móveis */
+    object-fit: cover;
 }
+
+/* Contêiner dos produtos */
+#produtos {
+    display: flex;
+    flex-wrap: wrap; /* Faz os produtos quebrarem para a linha de baixo */
+    justify-content: space-around; /* Espaça os produtos igualmente */
+    gap: 15px; /* Espaçamento entre os produtos */
+}
+
+/* Estilo dos cards de produto */
+.produto {
+    width: 48%; /* Cada card ocupa metade da largura */
+    max-width: 300px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px; /* Bordas arredondadas para suavizar o visual */
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    max-height: 180px; /* Limita a altura da imagem */
+    object-fit: contain;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    #produtos {
+        flex-direction: row; /* Mantenha os produtos em uma linha */
+        justify-content: flex-start; /* Alinha à esquerda */
+        gap: 10px; /* Menor espaçamento entre produtos */
+    }
+
+    .produto {
+        width: 48%; /* Dois produtos por linha, ocupando metade da largura */
+    }
+}
+
+/* Para telas muito pequenas, como celulares de 320px */
+@media (max-width: 480px) {
+    #banner {
+        max-height: 250px; /* Banner ainda mais baixo em celulares pequenos */
+    }
+
+    .produto {
+        width: 100%; /* 1 produto por linha */
+    }
+
+    /* Botão de abrir carrinho */
+    .btn-carrinho-mobile {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #f60;
+        color: white;
+        border: none;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    /* Carrinho modal ajustado */
+    #carrinho {
+        width: 90%; /* Usando 90% da largura da tela */
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #carrinho.aberto {
+        display: flex; /* Exibe o carrinho quando aberto */
+    }
+
+    /* Ajuste no botão de fechar */
+    #carrinho button {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f60;
+        color: white;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
+/* Ajustes para telas maiores */
+@media (min-width: 1200px) {
+    .produto {
+        width: 30%; /* 3 produtos por linha em telas grandes */
+    }
+}   
+/* Ajustes para telas médias */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .produto {
+        width: 45%; /* 2 produtos por linha em telas médias */
+    }
+}   

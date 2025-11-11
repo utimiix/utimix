@@ -71,3 +71,56 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<div id="produtos"></div>
+
+<!-- Carrinho Modal -->
+<div id="carrinho">
+    <h2>Carrinho de Compras</h2>
+    <div id="itens-carrinho"></div>
+    <div id="total">Total: R$ 0.00</div>
+    <div>
+        <span id="qtd-carrinho">0</span> Itens
+    </div>
+    <button id="btn-finalizar">Finalizar Pedido</button>
+    <button onclick="fecharCarrinho()">Fechar</button>
+</div>
+
+<!-- Botão para abrir o carrinho em dispositivos móveis -->
+<button onclick="toggleCarrinho()" class="btn-carrinho-mobile">Abrir Carrinho</button>
+<script src="script.js"></script>
+<style>
+    /* Estilos para o carrinho modal */
+    #carrinho {
+        display: none;
+        position: fixed;
+        top: 10%;
+        right: 10%;
+        width: 300px;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+
+    .btn-carrinho-mobile {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 16px;
+        z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+        .btn-carrinho-mobile {
+            display: block;
+        }
+    }
+</style>
