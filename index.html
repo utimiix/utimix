@@ -1,58 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utimix - Loja</title>
+    <title>Loja Virtual</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="top-bar">Utimix Importadora - Pedido mínimo R$500,00</div>
+</head>
+<body>
+    <!-- Barra superior -->
+    <div class="top-bar">Bem-vindo à nossa loja!</div>
+
+    <!-- Seção com os nomes e categorias -->
+    <div class="top-categories">
+        <ul>
+            <li><a href="#">Casa & Cozinha</a></li>
+            <li><a href="#">Eletrônicos & Acessórios</a></li>
+            <li><a href="#">Saúde & Beleza</a></li>
+            <li><a href="#">Esporte & Lazer</a></li>
+            <li><a href="#">Presentes</a></li>
+            <li><a href="#">Infantil</a></li>
+            <li><a href="#">Pet Shop</a></li>
+            <li><a href="#">Sazonal</a></li>
+            <li><a href="#">Novidades</a></li>
+        </ul>
+    </div>
+
+    <!-- Container Header -->
     <div class="header-container">
-      <input type="text" placeholder="Pesquisar produtos..." id="search">
-      <div class="menu-icons">
-        <a href="#" onclick="toggleCarrinho()">Carrinho (<span id="qtd-carrinho">0</span>)</a>
-      </div>
+        <input type="text" placeholder="Buscar produtos...">
+        <div class="menu-icons">
+            <a href="#" id="carrinho" class="carrinho-icon" onclick="toggleCarrinho()">
+                <img src="img/carrinho.png" alt="Carrinho">
+                <span id="qtd-carrinho">0</span>
+            </a>
+            <a href="https://wa.me/5511980946705" target="_blank" class="whatsapp-flutuante">
+                <img src="img/whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
     </div>
+
     <div class="menu">
-      <a href="#">Casa & Cozinha</a>
-      <a href="#">Eletrônicos</a>
-      <a href="#">Saúde & Beleza</a>
-      <a href="#">Esporte & Lazer</a>
-      <a href="#">Infantil</a>
-      <a href="#">Pet Shop</a>
-      <a href="#">Sazonal</a>
-      <a href="#">Novidades</a>
+        <!-- Links de menu -->
     </div>
 
-    <!-- Banner -->
     <div class="banner">
-      <img src="img/banner.jpg" alt="Banner Utimix" class="banner-img">
+        <img src="img/banner.jpg" alt="Banner" class="banner-img">
     </div>
 
-    <div id="produtos" class="produtos"></div>
-
-    <!-- Carrinho flutuante -->
-    <div class="carrinho" id="carrinho">
-      <h2>Meu Carrinho</h2>
-      <div id="itens-carrinho"></div>
-      <p id="total">Total: R$ 0,00</p>
-      <button id="btn-finalizar">Finalizar pedido via WhatsApp</button>
-      <p class="aviso">Pedido mínimo: R$500,00</p>
+    <div class="produtos" id="produtos">
+        <!-- Produtos serão listados aqui -->
     </div>
 
-    <!-- WhatsApp flutuante -->
-    <a href="https://wa.me/5511980946705" class="whatsapp-flutuante" target="_blank">
-      <img src="img/whatsapp.png" alt="WhatsApp">
-    </a>
+    <!-- Carrinho Flutuante -->
+    <div class="carrinho" id="carrinho-div">
+        <h2>Meu Carrinho</h2>
+        <div id="itens-carrinho"></div>
+        <p id="total">Total: R$ 0.00</p>
+        <button id="btn-finalizar">Finalizar Compra</button>
+    </div>
+
+    <!-- Mensagem de Confirmação -->
+    <div id="mensagem-confirmacao" class="mensagem-confirmacao">
+        Produto adicionado ao carrinho!
+    </div>
 
     <footer>
-      © Utimix – Todos os direitos reservados
-      <div>
-        <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Contato</a>
-      </div>
+        <p>&copy; 2025 Loja Virtual. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
