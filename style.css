@@ -419,3 +419,144 @@ body {
         transform: translateY(0);
     }
 }
+
+.whatsapp-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* Cor do WhatsApp */
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: flutuar 1.5s ease-in-out infinite;
+}   
+.whatsapp-flutuante img {
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+/* Container de produtos */
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os produtos */
+    gap: 20px; /* Espaço adequado entre os produtos */
+    margin: 20px auto;
+    max-width: 1200px; /* Limite máximo para telas grandes */
+}
+
+/* Cada produto */
+.produto {
+    flex: 1 1 220px; /* Cresce, encolhe, largura mínima 220px */
+    max-width: 260px; /* Tamanho máximo do card */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px); /* Pequena animação ao passar o mouse */
+}
+
+/* Imagem do produto */
+.produto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Preenche bem o card */
+    border-radius: 8px;
+}
+
+/* Nome do produto */
+.produto h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+/* Preço */
+.produto p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+/* Botão */
+.produto button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.produto button:hover {
+    background-color: #218838;
+}
+
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .produto {
+        flex: 1 1 200px;
+    }
+
+    .produto img {
+        height: 200px;
+    }
+
+    .produto h3, .produto p {
+        font-size: 14px;
+    }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+    .produto {
+        flex: 1 1 45%; /* 2 produtos por linha */
+        max-width: none;
+    }
+
+    .produto img {
+        height: 180px;
+    }
+
+    .produto h3, .produto p {
+        font-size: 13px;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .produto {
+        flex: 1 1 100%; /* 1 produto por linha */
+        margin: 10px 0;
+    }
+
+    .produto img {
+        height: 160px;
+    }
+
+    .produto h3, .produto p {
+        font-size: 12px;
+    }
+
+    .produto button {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
