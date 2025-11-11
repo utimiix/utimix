@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utimix - Loja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-bar">Utimix Importadora - Pedido mínimo R$500,00</div>
+
+  <div class="header-container">
+    <input type="text" placeholder="Pesquisar produtos..." id="search">
+    <div class="menu-icons">
+      <a href="#" onclick="toggleCarrinho()">Carrinho (<span id="qtd-carrinho">0</span>)</a>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a href="#">Casa & Cozinha</a>
+    <a href="#">Eletrônicos</a>
+    <a href="#">Saúde & Beleza</a>
+    <a href="#">Esporte & Lazer</a>
+    <a href="#">Infantil</a>
+    <a href="#">Pet Shop</a>
+    <a href="#">Sazonal</a>
+    <a href="#">Novidades</a>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="img/banner.jpg" alt="Banner Utimix" class="banner-img">
+  </div>
+
+  <div id="produtos" class="produtos"></div>
+
+  <!-- Carrinho flutuante -->
+  <div class="carrinho" id="carrinho">
+    <h2>Meu Carrinho</h2>
+    <div id="itens-carrinho"></div>
+    <p id="total">Total: R$ 0,00</p>
+    <button id="btn-finalizar">Finalizar pedido via WhatsApp</button>
+    <p class="aviso">Pedido mínimo: R$500,00</p>
+  </div>
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/5511980946705" class="whatsapp-flutuante" target="_blank">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <footer>
+    © Utimix – Todos os direitos reservados
+    <div>
+      <a href="#">Política de Privacidade</a> |
+      <a href="#">Termos de Uso</a> |
+      <a href="#">Contato</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
