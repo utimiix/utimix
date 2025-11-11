@@ -9,7 +9,7 @@
 <body>
     <!-- Barra superior -->
     <div class="top-bar">Bem-vindo à nossa loja!</div>
-
+    
     <!-- Seção com os nomes e categorias -->
     <div class="top-categories">
         <ul>
@@ -39,14 +39,15 @@
         </div>
     </div>
 
-    <div class="menu">
-        <!-- Links de menu -->
-    </div>
+    <!-- Menu de navegação -->
+    <div class="menu"></div>
 
+    <!-- Banner -->
     <div class="banner">
         <img src="img/banner.jpg" alt="Banner" class="banner-img">
     </div>
 
+    <!-- Produtos -->
     <div class="produtos" id="produtos">
         <!-- Produtos serão listados aqui -->
     </div>
@@ -72,55 +73,19 @@
 </body>
 </html>
 
-<div id="produtos"></div>
+<!-- Restante do HTML sem alteração... -->
 
-<!-- Carrinho Modal -->
-<div id="carrinho">
-    <h2>Carrinho de Compras</h2>
-    <div id="itens-carrinho"></div>
-    <div id="total">Total: R$ 0.00</div>
-    <div>
-        <span id="qtd-carrinho">0</span> Itens
-    </div>
-    <button id="btn-finalizar">Finalizar Pedido</button>
-    <button onclick="fecharCarrinho()">Fechar</button>
-</div>
+<!-- WhatsApp flutuante com animação -->
+<a href="https://wa.me/5511980946705" target="_blank" class="whatsapp-flutuante" id="whatsapp-icon">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+</a>
 
-<!-- Botão para abrir o carrinho em dispositivos móveis -->
-<button onclick="toggleCarrinho()" class="btn-carrinho-mobile">Abrir Carrinho</button>
-<script src="script.js"></script>
+<!-- Restante do HTML sem alteração... -->
 <style>
-    /* Estilos para o carrinho modal */
-    #carrinho {
-        display: none;
-        position: fixed;
-        top: 10%;
-        right: 10%;
-        width: 300px;
-        background-color: white;
-        border: 1px solid #ccc;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        z-index: 1000;
-    }
-
-    .btn-carrinho-mobile {
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25D366;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 50%;
-        font-size: 16px;
-        z-index: 1000;
-    }
-
-    @media (max-width: 600px) {
-        .btn-carrinho-mobile {
-            display: block;
-        }
-    }
-</style>
+.whatsapp-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}   

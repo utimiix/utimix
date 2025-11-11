@@ -1,467 +1,421 @@
 /* Reset e Estilos gerais */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
 }
 
 /* Barra superior */
 .top-bar {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 5px;
-  font-size: 14px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
 }
 
 /* Seção de Categorias */
 .top-categories {
-  background: #007bff;
-  padding: 10px 0;
-  text-align: center;
+    background: #007bff;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .top-categories ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .top-categories li {
-  margin: 0 15px;
+    margin: 0 15px;
 }
 
 .top-categories a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 5px 10px;
-  display: block;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .top-categories a:hover {
-  background-color: #0056b3; /* Cor de hover */
+    background-color: #0056b3; /* Cor de hover */
 }
 
 /* Container Header */
 .header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-container input {
-  width: 40%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .menu-icons a {
-  margin-left: 10px;
-  text-decoration: none;
-  color: #333;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333;
 }
 
 /* Menu de navegação */
 .menu {
-  background: #007bff;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+    background: #007bff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .menu a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
 }
 
 /* Banner */
 .banner {
-  position: relative;
-  text-align: center;
-  color: #fff;
+    position: relative;
+    text-align: center;
+    color: #fff;
 }
 
 .banner-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  max-height: 400px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 /* Produtos */
 .produtos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
-/* Produto */
 .produto {
-  background: #fff;
-  border: 1px solid #ddd;
-  margin: 10px;
-  width: calc(33.33% - 20px); /* 3 produtos por linha no desktop */
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: 0.3s;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* 3 produtos por linha no desktop */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
 .produto:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .produto img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
 .produto h3 {
-  font-size: 16px;
-  padding: 5px;
+    font-size: 16px;
+    padding: 5px;
 }
 
 .produto p {
-  padding: 0 5px;
-  color: #007bff;
-  font-weight: bold;
+    padding: 0 5px;
+    color: #007bff;
+    font-weight: bold;
 }
 
 .produto .quantidade {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .produto input {
-  width: 50px;
-  padding: 5px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+    width: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
 
 .produto button {
-  width: 100%;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-/* Mensagem de Confirmação */
-.mensagem-confirmacao {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: none; /* Inicialmente escondido */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  font-size: 16px;
+    width: 100%;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }
 
 /* Carrinho */
 .carrinho {
-  position: fixed;
-  top: auto;
-  left: 0;
-  bottom: 20px;
-  width: 300px;
-  background: #fff;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-  padding: 20px;
-  transition: bottom 0.3s, left 0.3s;
-  z-index: 998;
-  display: none;
-  overflow-y: auto;
+    position: fixed;
+    top: auto;
+    left: 0;
+    bottom: 20px;
+    width: 300px;
+    background: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    padding: 20px;
+    transition: bottom 0.3s, left 0.3s;
+    z-index: 998;
+    display: none;
+    overflow-y: auto;
 }
 
 .carrinho.aberto {
-  display: block;
+    display: block;
 }
 
 #itens-carrinho {
-  max-height: 60%;
-  overflow-y: auto;
+    max-height: 60%;
+    overflow-y: auto;
 }
 
 #btn-finalizar {
-  width: 100%;
-  padding: 10px;
-  background: #25d366;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    background: #25d366;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.aviso {
-  font-size: 12px;
-  color: red;
-  text-align: center;
-}
-
-/* Carrinho Flutuante (no canto inferior esquerdo) */
-.carrinho-flutuante {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #007bff; /* Cor do fundo */
-  border-radius: 50%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9998;
-}
-
-.carrinho-flutuante img {
-  width: 40px;
-  height: 40px;
+/* Mensagem de Confirmação */
+.mensagem-confirmacao {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none; /* Inicialmente escondido */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-size: 16px;
 }
 
 /* WhatsApp flutuante */
 .whatsapp-flutuante {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;  /* Tamanho reduzido */
-  height: 60px; /* Tamanho reduzido */
-  background-color: #25d366;  /* Cor do WhatsApp */
-  border-radius: 50%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: flutuar 1.5s ease-in-out infinite;  /* Animação para flutuar */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* Cor do WhatsApp */
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: flutuar 1.5s ease-in-out infinite;
 }
 
 .whatsapp-flutuante img {
-  width: 40px;  /* Tamanho do ícone do WhatsApp */
-  height: 40px; /* Tamanho do ícone do WhatsApp */
+    width: 40px;
+    height: 40px;
+    border
+: none;
 }
 
-/* Animação para o ícone flutuar */
-@keyframes flutuar {
-  0% {
-    transform: translateY(0); /* Começa na posição normal */
-  }
-  50% {
-    transform: translateY(-10px); /* Sobe 10px no meio da animação */
-  }
-  100% {
-    transform: translateY(0); /* Volta para a posição normal */
-  }
+/* Estilo para o ícone do WhatsApp com animação de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
-/* Responsividade - Layout para dispositivos móveis */
-@media (max-width: 768px) {
-  /* Ajuste para mostrar 2 produtos por linha */
-  .produtos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha */
-    gap: 10px;
-  }
-
-  .produto {
-    width: 100%; /* Garante que o tamanho do produto se ajuste ao grid */
-  }
-
-  /* Ajuste nas imagens para torná-las menores em dispositivos móveis */
-  .produto img {
-    height: 150px; /* Menor altura para imagens */
-  }
-
-  .header-container input {
-    width: 60%; /* Ajuste para mais espaço na barra de pesquisa */
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu a {
-    padding: 8px 12px;
-  }
-
-  /* Ajustes para o banner no celular */
-  .banner-img {
-    height: 200px; /* Menor altura para o banner em celulares */
-  }
+.whatsapp-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
 }
 
-@media (max-width: 480px) {
-  /* Ajuste para 1 produto por linha em telas muito pequenas */
-  .produtos {
-    grid-template-columns: 1fr; /* 1 produto por linha */
-  }
-
-  /* Imagens ainda menores */
-  .produto img {
-    height: 120px;
-  }
-
-  .header-container input {
-    width: 70%; /* Ajuste para mais espaço na barra de pesquisa */
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu a {
-    padding: 8px 12px;
-  }
-
-  /* Ajuste para o banner no celular */
-  .banner-img {
-    height: 180px; /* Altura reduzida no banner */
-  }
-} 
-
-/* Banner */
-#banner {
-    width: 100%;
-    max-height: 300px; /* Reduzido para dispositivos móveis */
-    object-fit: cover;
-}
-
-/* Contêiner dos produtos */
-#produtos {
+/* Estilo para o carrinho de compras */
+.carrinho .item-carrinho {
     display: flex;
-    flex-wrap: wrap; /* Faz os produtos quebrarem para a linha de baixo */
-    justify-content: space-around; /* Espaça os produtos igualmente */
-    gap: 15px; /* Espaçamento entre os produtos */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
-/* Estilo dos cards de produto */
-.produto {
-    width: 48%; /* Cada card ocupa metade da largura */
-    max-width: 300px;
-    margin: 10px;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border-radius: 8px; /* Bordas arredondadas para suavizar o visual */
+.carrinho .item-carrinho button {
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
 }
 
+.carrinho .item-carrinho button:hover {
+    background-color: #ff4500;
+}
+
+/* Animação do carrinho */
+@keyframes openCarrinho {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.carrinho.aberto {
+    animation: openCarrinho 0.5s ease-out;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .produto {
+        width: calc(50% - 20px); /* 2 produtos por linha em tablets */
+    }
+}
+
+/* Estilo para o container de produtos */
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px;
+}
+
+/* Ajustando as imagens dos produtos para ficarem adaptáveis */
 .produto img {
     width: 100%;
     height: auto;
-    max-height: 180px; /* Limita a altura da imagem */
-    object-fit: contain;
+    max-width: 200px; /* Limita a largura máxima da imagem para ficar proporcional */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
 }
 
-/* Responsividade para dispositivos móveis */
+/* Ajuste para o banner */
+.banner img {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Garante que o banner não seja muito grande em telas pequenas */
+    object-fit: cover;
+}
+
+/* Adicionando responsividade com media queries */
+
+/* Quando a tela for menor que 768px (telas de celular) */
 @media (max-width: 768px) {
-    #produtos {
-        flex-direction: row; /* Mantenha os produtos em uma linha */
-        justify-content: flex-start; /* Alinha à esquerda */
-        gap: 10px; /* Menor espaçamento entre produtos */
+
+    /* Exibindo produtos em 2 colunas */
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .produto {
-        width: 48%; /* Dois produtos por linha, ocupando metade da largura */
-    }
-}
-
-/* Para telas muito pequenas, como celulares de 320px */
-@media (max-width: 480px) {
-    #banner {
-        max-height: 250px; /* Banner ainda mais baixo em celulares pequenos */
+    /* Ajustando o tamanho das imagens para ficarem adequadas no celular */
+    .produto img {
+        max-width: 150px; /* Limita o tamanho da imagem no celular */
     }
 
-    .produto {
-        width: 100%; /* 1 produto por linha */
+    /* Ajustando o banner para o celular */
+    .banner img {
+        max-height: 200px; /* Reduz o tamanho do banner para telas menores */
     }
 
-    /* Botão de abrir carrinho */
-    .btn-carrinho-mobile {
-        display: block;
+    /* Carrinho e outras seções podem ter a largura ajustada */
+    .carrinho {
         width: 100%;
-        padding: 15px;
-        background-color: #f60;
-        color: white;
-        border: none;
-        font-size: 18px;
-        text-align: center;
-        cursor: pointer;
+        margin: 0;
     }
 
-    /* Carrinho modal ajustado */
-    #carrinho {
-        width: 90%; /* Usando 90% da largura da tela */
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1000;
-        display: none;
-        flex-direction: column;
-        align-items: center;
+    /* Ajustando o ícone do WhatsApp para aparecer corretamente em dispositivos móveis */
+    .whatsapp-flutuante {
+        right: 10px; /* Menor margem para que o ícone não fique tão distante das bordas */
+        bottom: 10px;
+        animation: pulse 1s infinite;
     }
 
-    #carrinho.aberto {
-        display: flex; /* Exibe o carrinho quando aberto */
-    }
-
-    /* Ajuste no botão de fechar */
-    #carrinho button {
-        margin-top: 15px;
-        padding: 10px;
-        background-color: #f60;
-        color: white;
-        border: none;
-        font-size: 16px;
-        cursor: pointer;
+    /* Ajustando o tamanho do texto para telas menores */
+    .produto p {
+        font-size: 14px;
     }
 }
-/* Ajustes para telas maiores */
-@media (min-width: 1200px) {
-    .produto {
-        width: 30%; /* 3 produtos por linha em telas grandes */
+
+/* Quando a tela for menor que 480px (celulares muito pequenos) */
+@media (max-width: 480px) {
+
+    /* Ajustando para uma coluna única em dispositivos muito pequenos */
+    .produtos {
+        grid-template-columns: 1fr;
     }
-}   
-/* Ajustes para telas médias */
-@media (min-width: 769px) and (max-width: 1199px) {
-    .produto {
-        width: 45%; /* 2 produtos por linha em telas médias */
+
+    /* Ajuste no tamanho das imagens ainda menor */
+    .produto img {
+        max-width: 120px; /* Ajuste ainda menor para telas pequenas */
     }
-}   
+
+    /* Banner ajustado ainda mais para telas menores */
+    .banner img {
+        max-height: 150px;
+    }
+
+    /* Ajustando o tamanho das fontes e outros elementos */
+    .produto p {
+        font-size: 12px;
+    }
+
+    /* Corrigindo o carrinho para que se ajuste bem */
+    .carrinho {
+        width: 100%;
+    }
+
+    /* Ajustando o ícone do WhatsApp para telas pequenas */
+    .whatsapp-flutuante {
+        right: 5px;
+        bottom: 5px;
+        animation: pulse 1s infinite;
+    }
+}
+/* Animação de flutuação para o ícone do WhatsApp */
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
