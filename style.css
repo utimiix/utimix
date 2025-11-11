@@ -1,9 +1,17 @@
+/* Reset e Estilos gerais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f9f9f9;
+  background-color: #f4f4f4;
 }
 
+/* Barra superior */
 .top-bar {
   background: #222;
   color: #fff;
@@ -12,6 +20,7 @@ body {
   font-size: 14px;
 }
 
+/* Container Header */
 .header-container {
   display: flex;
   align-items: center;
@@ -34,6 +43,7 @@ body {
   color: #333;
 }
 
+/* Menu de navegação */
 .menu {
   background: #007bff;
   display: flex;
@@ -61,6 +71,7 @@ body {
   object-fit: cover;
 }
 
+/* Produtos */
 .produtos {
   display: flex;
   flex-wrap: wrap;
@@ -123,7 +134,7 @@ body {
 
 @media (max-width: 480px) {
   .produto {
-    width: 100%; /* 2 produto por linha em telas pequenas */
+    width: 100%; /* 1 produto por linha em telas pequenas */
   }
 
   .header-container input {
@@ -180,7 +191,6 @@ body {
   text-align: center;
 }
 
-/* WhatsApp flutuante com animação mais chamativa */
 .whatsapp-flutuante {
   position: fixed;
   bottom: 20px;
@@ -210,7 +220,6 @@ body {
   }
 }
 
-/* Footer */
 footer {
   background: #222;
   color: #fff;
@@ -227,170 +236,4 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.produto {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: calc(33% - 20px); /* 3 produtos por linha */
-    text-align: center;
-}
-
-.produto img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.produto h3 {
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-
-.produto p {
-    font-size: 1rem;
-    margin-top: 5px;
-    color: #777;
-}
-
-input[type="number"] {
-    width: 50px;
-    margin-top: 10px;
-    padding: 5px;
-}
-
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 1rem;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.carrinho {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    transform: translateY(-50%);
-    z-index: 1000;
-    display: none;
-}
-
-.carrinho.aberto {
-    display: block;
-}
-
-#itens-carrinho {
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.item-carrinho {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.item-carrinho button {
-    background-color: #dc3545;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.item-carrinho button:hover {
-    background-color: #c82333;
-}
-
-#total {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-#qtd-carrinho {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #28a745;
-}
-
-/* Media Queries para dispositivos móveis */
-@media (max-width: 768px) {
-    .produto {
-        width: calc(50% - 20px); /* 2 produtos por linha em telas pequenas */
-    }
-
-    #itens-carrinho {
-        max-height: 250px;
-    }
-
-    button {
-        font-size: 0.9rem;
-        padding: 8px 15px;
-    }
-
-    input[type="number"] {
-        width: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .produto {
-        width: 100%; /* 1 produto por linha em telas muito pequenas */
-    }
-
-    .carrinho {
-        width: 80%;
-        padding: 15px;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 10px 15px;
-    }
-
-    input[type="number"] {
-        width: 40px;
-    }
-
-    #total, #qtd-carrinho {
-        font-size: 1rem;
-    }
-}
-
+/* Fim do estilo CSS */
