@@ -1,164 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utimix - Loja</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="top-bar">Utimix Importadora - Pedido mínimo R$500,00</div>
-
-  <div class="header-container">
-    <input type="text" placeholder="Pesquisar produtos..." id="search">
-    <div class="menu-icons">
-      <a href="#" onclick="toggleCarrinho()">Carrinho (<span id="qtd-carrinho">0</span>)</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utimix - Loja</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="top-bar">Utimix Importadora - Pedido mínimo R$500,00</div>
+    <div class="header-container">
+      <input type="text" placeholder="Pesquisar produtos..." id="search">
+      <div class="menu-icons">
+        <a href="#" onclick="toggleCarrinho()">Carrinho (<span id="qtd-carrinho">0</span>)</a>
+      </div>
     </div>
-  </div>
-
-  <div class="menu">
-    <a href="#">Casa & Cozinha</a>
-    <a href="#">Eletrônicos</a>
-    <a href="#">Saúde & Beleza</a>
-    <a href="#">Esporte & Lazer</a>
-    <a href="#">Infantil</a>
-    <a href="#">Pet Shop</a>
-    <a href="#">Sazonal</a>
-    <a href="#">Novidades</a>
-  </div>
-
-  <!-- Banner -->
-  <div class="banner">
-    <img src="img/banner.jpg" alt="Banner Utimix" class="banner-img">
-  </div>
-
-  <div id="produtos" class="produtos"></div>
-
-  <!-- Carrinho flutuante -->
-  <div class="carrinho" id="carrinho">
-    <h2>Meu Carrinho</h2>
-    <div id="itens-carrinho"></div>
-    <p id="total">Total: R$ 0,00</p>
-    <button id="btn-finalizar">Finalizar pedido via WhatsApp</button>
-    <p class="aviso">Pedido mínimo: R$500,00</p>
-  </div>
-
-  <!-- WhatsApp flutuante -->
-  <a href="https://wa.me/5511980946705" class="whatsapp-flutuante" target="_blank">
-    <img src="img/whatsapp.png" alt="WhatsApp">
-  </a>
-
-  <footer>
-    © Utimix – Todos os direitos reservados
-    <div>
-      <a href="#">Política de Privacidade</a> |
-      <a href="#">Termos de Uso</a> |
-      <a href="#">Contato</a>
+    <div class="menu">
+      <a href="#">Casa & Cozinha</a>
+      <a href="#">Eletrônicos</a>
+      <a href="#">Saúde & Beleza</a>
+      <a href="#">Esporte & Lazer</a>
+      <a href="#">Infantil</a>
+      <a href="#">Pet Shop</a>
+      <a href="#">Sazonal</a>
+      <a href="#">Novidades</a>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Banner -->
+    <div class="banner">
+      <img src="img/banner.jpg" alt="Banner Utimix" class="banner-img">
+    </div>
+
+    <div id="produtos" class="produtos"></div>
+
+    <!-- Carrinho flutuante -->
+    <div class="carrinho" id="carrinho">
+      <h2>Meu Carrinho</h2>
+      <div id="itens-carrinho"></div>
+      <p id="total">Total: R$ 0,00</p>
+      <button id="btn-finalizar">Finalizar pedido via WhatsApp</button>
+      <p class="aviso">Pedido mínimo: R$500,00</p>
+    </div>
+
+    <!-- WhatsApp flutuante -->
+    <a href="https://wa.me/5511980946705" class="whatsapp-flutuante" target="_blank">
+      <img src="img/whatsapp.png" alt="WhatsApp">
+    </a>
+
+    <footer>
+      © Utimix – Todos os direitos reservados
+      <div>
+        <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Contato</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .top-bar {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-  }
-
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-  }
-
-  #search {
-    width: 70%;
-    padding: 8px;
-    font-size: 16px;
-  }
-
-  .menu-icons a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-
-  .menu {
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-  }
-
-  .menu a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-  }
-
-  .menu a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .banner {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .banner-img {
-    width: 100%;
-    height: auto;
-  }
-
-  .produtos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .carrinho {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 300px;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: none;
-  }
-
-  .whatsapp-flutuante {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .whatsapp-flutuante img {
-    width: 100%;
-    height: auto;
-  }
-
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0
-    };
