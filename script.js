@@ -1,3 +1,4 @@
+// ---------- LISTA DE PRODUTOS ----------
 const produtos = [
     { id: 1, nome: "Copo Caneca Térmica Quencher Com Canudo E Alça 1200ML", preco: 28.99, img: "img/produto1.jpg" },
     { id: 2, nome: "Almofada Travesseiro De Pernas Ortopédico", preco: 18.99, img: "img/produto2.jpg" },
@@ -28,143 +29,125 @@ const produtos = [
     { id: 27, nome: "Bomba Para Galão Água Elétrica Garrafão Torneira Filtro USB", preco: 9.99, img: "img/produto27.jpg" },
     { id: 28, nome: "Conjunto de Tigelas Potes de Inox com Tampa – 5 peças", preco: 17.99, img: "img/produto28.jpg" },
     { id: 29, nome: "Balança Cozinha Digital 10kg Alta Precisão", preco: 12.99, img: "img/produto29.jpg" },
-    { id: 30, nome: "Camiseta Masculina Estampa Divertida Algodão", preco: 18.99, img: "img/produto30.jpg" },
+    { id: 30, nome: "Forma Para Air Fryer De Silicone Antiaderente – Sem Sujeira", preco: 4.50, img: "img/produto30.jpg" },
+    { id: 31, nome: "Máquina De Barbear E Cortar Cabelo Profissional Recarregável Sem Fio Dragão", preco: 9.99, img: "img/produto31.jpg" },
+    { id: 32, nome: "Bolsa Térmica Infantil Lancheira Escolar Marmita C/ Alça Animais 3D", preco: 6.99, img: "img/produto32.jpg" },
+    { id: 33, nome: "Tela Rede Mosquiteiro Contra Insetos Com Velcro Para Janela", preco: 6.99, img: "img/produto33.jpg" },
+    { id: 34, nome: "Barra De Apoio Portátil Com Ventosa Para Idosos Deficientes Banheiro", preco: 16.99, img: "img/produto34.jpg" },
+    { id: 35, nome: "Labubu Boneco De Pelúcia 3ª Geração", preco: 14.99, img: "img/produto35.jpg" },
+    { id: 36, nome: "Labubu Boneco De Pelúcia Sentado Chaveiro Surpresa", preco: 14.99, img: "img/produto36.jpg" }
 ];
 
-// Função para exibir os produtos na página
-function exibirProdutos() {
-    const produtosContainer = document.getElementById('produtos');
-    produtos.forEach(produto => {
-        const produtoElemento = document.createElement('div');
-        produtoElemento.classList.add('produto');
-        produtoElemento.innerHTML = `
-            <img src="${produto.img}" alt="${produto.nome}">
-            <h3>${produto.nome}</h3>
-            <p>R$ ${produto.preco.toFixed(2)}</p>
-            <div class="quantidade">
-                <input type="number" value="1" min="1" id="quantidade-${produto.id}">
-                <button onclick="adicionarAoCarrinho(${produto.id})">Adicionar ao Carrinho</button>
-            </div>
+const container = document.getElementById("produtos");
+const carrinhoDiv = document.getElementById("carrinho-div");
+const itensCarrinho = document.getElementById("itens-carrinho");
+const totalEl = document.getElementById("total");
+const qtdCarrinho = document.getElementById("qtd-carrinho");
+const qtdCarrinhoMini = document.getElementById("qtd-carrinho-mini");
+const btnFinalizar = document.getElementById("btn-finalizar");
+const mensagem = document.getElementById("mensagem-confirmacao");
+const inputBusca = document.getElementById("busca");
+
+let carrinho = [];
+
+// ---------- MOSTRAR PRODUTOS ----------
+function mostrarProdutos(lista) {
+    container.innerHTML = "";
+    lista.forEach(prod => {
+        const card = document.createElement("div");
+        card.classList.add("produto");
+        card.innerHTML = `
+            <img src="${prod.img}" alt="${prod.nome}">
+            <h3>${prod.nome}</h3>
+            <p>A partir de: R$ ${prod.preco.toFixed(2)}</p>
+            <input type="number" id="qtd-${prod.id}" min="1" value="1">
+            <button onclick="adicionar(${prod.id})">Adicionar ao carrinho</button>
         `;
-        produtosContainer.appendChild(produtoElemento);
+        container.appendChild(card);
     });
 }
+mostrarProdutos(produtos);
 
-// Função para adicionar produto ao carrinho
-function adicionarAoCarrinho(produtoId) {
-    const quantidadeInput = document.getElementById(`quantidade-${produtoId}`);
-    const quantidade = parseInt(quantidadeInput.value);
+// ---------- BUSCA FUNCIONAL ----------
+inputBusca.addEventListener("input", () => {
+    const termo = inputBusca.value.toLowerCase();
+    const filtrados = produtos.filter(p => p.nome.toLowerCase().includes(termo));
+    mostrarProdutos(filtrados);
+});
 
-    const produto = produtos.find(p => p.id === produtoId);
-    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+// ---------- ADICIONAR AO CARRINHO ----------
+function adicionar(id) {
+    const produto = produtos.find(p => p.id === id);
+    const inputQtd = document.getElementById(`qtd-${id}`);
+    let qtd = parseInt(inputQtd.value);
 
-    const itemCarrinho = carrinho.find(item => item.produto.id === produtoId);
-    if (itemCarrinho) {
-        itemCarrinho.quantidade += quantidade;
+    if (isNaN(qtd) || qtd < 1) qtd = 1;
+
+    const index = carrinho.findIndex(p => p.id === id);
+    if (index > -1) {
+        carrinho[index].qtd += qtd;
     } else {
-        carrinho.push({ produto, quantidade });
+        carrinho.push({ ...produto, qtd });
     }
 
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
     atualizarCarrinho();
+    abrirCarrinho();
     mostrarMensagem();
 }
 
-// Função para mostrar mensagem de produto adicionado
-function mostrarMensagem() {
-    const mensagem = document.getElementById('mensagem-confirmacao');
-    mensagem.style.display = 'block';
-    setTimeout(() => mensagem.style.display = 'none', 3000);
+// ---------- REMOVER ----------
+function remover(index) {
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
 }
 
-// Função para exibir o carrinho
+// ---------- ATUALIZAR ----------
+function atualizarCarrinho() {
+    itensCarrinho.innerHTML = "";
+    let total = 0;
+    let totalItens = 0;
+
+    carrinho.forEach((produto, index) => {
+        const item = document.createElement("div");
+        item.classList.add("item-carrinho");
+        item.innerHTML = `
+            <p>${produto.nome} x ${produto.qtd}</p>
+            <p>R$ ${(produto.preco * produto.qtd).toFixed(2)}</p>
+            <button onclick="remover(${index})">Remover</button>
+        `;
+        itensCarrinho.appendChild(item);
+        total += produto.preco * produto.qtd;
+        totalItens += produto.qtd;
+    });
+
+    totalEl.textContent = `Total: R$ ${total.toFixed(2)}`;
+    qtdCarrinho.textContent = totalItens;
+    qtdCarrinhoMini.textContent = totalItens;
+}
+
+// ---------- FINALIZAR COMPRA ----------
+btnFinalizar.addEventListener("click", () => {
+    const total = carrinho.reduce((acc, p) => acc + (p.preco * p.qtd), 0);
+    if (total >= 500) {
+        window.open(`https://wa.me/5511980946705?text=Olá, gostaria de finalizar meu pedido de R$${total.toFixed(2)}`, "_blank");
+    } else {
+        alert("O valor mínimo para compra é R$500,00");
+    }
+});
+
+// ---------- ABRIR/FECHAR CARRINHO ----------
 function toggleCarrinho() {
-    const carrinhoDiv = document.getElementById('carrinho-div');
-    carrinhoDiv.classList.toggle('aberto');
-    atualizarCarrinho();
+    carrinhoDiv.classList.toggle("aberto");
 }
 
-// Função para atualizar a visualização do carrinho
-function atualizarCarrinho() {
-    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    const qtdCarrinho = document.getElementById('qtd-carrinho');
-    const itensCarrinho = document.getElementById('itens-carrinho');
-    const total = document.getElementById('total');
-
-    // Atualizar quantidade no ícone do carrinho
-    const quantidadeTotal = carrinho.reduce((total, item) => total + item.quantidade, 0);
-    qtdCarrinho.textContent = quantidadeTotal;
-
-    // Atualizar itens no carrinho
-    itensCarrinho.innerHTML = '';
-    let valorTotal = 0;
-    carrinho.forEach(item => {
-        const itemElemento = document.createElement('div');
-        itemElemento.classList.add('item-carrinho');
-        itemElemento.innerHTML = `
-            <p>${item.produto.nome} x${item.quantidade}</p>
-            <p>R$ ${(item.produto.preco * item.quantidade).toFixed(2)}</p>
-        `;
-        itensCarrinho.appendChild(itemElemento);
-        valorTotal += item.produto.preco * item.quantidade;
-    });
-
-    // Atualizar o total
-    total.textContent = `Total: R$ ${valorTotal.toFixed(2)}`;
+function abrirCarrinho() {
+    carrinhoDiv.classList.add("aberto");
 }
 
-// Exibir os produtos assim que a página carregar
-document.addEventListener('DOMContentLoaded', exibirProdutos);
-// Atualizar o carrinho ao carregar a página
-document.addEventListener('DOMContentLoaded', atualizarCarrinho);
-
-// Função para remover produto do carrinho
-function removerDoCarrinho(produtoId) {
-    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    const novoCarrinho = carrinho.filter(item => item.produto.id !== produtoId);
-    localStorage.setItem('carrinho', JSON.stringify(novoCarrinho));
-    atualizarCarrinho();
+// ---------- MENSAGEM CONFIRMAÇÃO ----------
+function mostrarMensagem() {
+    mensagem.classList.add("mostrar");
+    setTimeout(() => {
+        mensagem.classList.remove("mostrar");
+    }, 2000);
 }
-
-// Atualizar a exibição do carrinho com a opção de remover produtos
-function atualizarCarrinho() {
-    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    const qtdCarrinho = document.getElementById('qtd-carrinho');
-    const itensCarrinho = document.getElementById('itens-carrinho');
-    const total = document.getElementById('total');
-
-    // Atualizar quantidade no ícone do carrinho
-    const quantidadeTotal = carrinho.reduce((total, item) => total + item.quantidade, 0);
-    qtdCarrinho.textContent = quantidadeTotal;
-
-    // Atualizar itens no carrinho
-    itensCarrinho.innerHTML = '';
-    let valorTotal = 0;
-    carrinho.forEach(item => {
-        const itemElemento = document.createElement('div');
-        itemElemento.classList.add('item-carrinho');
-        itemElemento.innerHTML = `
-            <p>${item.produto.nome} x${item.quantidade}</p>
-            <p>R$ ${(item.produto.preco * item.quantidade).toFixed(2)}</p>
-            <button onclick="removerDoCarrinho(${item.produto.id})">Remover</button>
-        `;
-        itensCarrinho.appendChild(itemElemento);
-        valorTotal += item.produto.preco * item.quantidade;
-    });
-
-    // Atualizar o total
-    total.textContent = `Total: R$ ${valorTotal.toFixed(2)}`;
-}
-
-// Exibir os produtos assim que a página carregar
-document.addEventListener('DOMContentLoaded', exibirProdutos);
-
-// Função para animar o WhatsApp
-function animarWhatsApp() {
-    const whatsappIcon = document.getElementById('whatsapp-icon');
-    whatsappIcon.classList.add('whatsapp-flutuante');
-}
-
-animarWhatsApp();  // Chama a função para iniciar a animação assim que a página carrega
-// Atualizar o carrinho ao carregar a página
-document.addEventListener('DOMContentLoaded', atualizarCarrinho);

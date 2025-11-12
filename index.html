@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Virtual</title>
+    <title>Utimix Loja</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Barra superior -->
-    <div class="top-bar">Bem-vindo à nossa loja!</div>
+    <div class="top-bar">Bem-vindo à Utimix Loja!</div>
     
-    <!-- Seção com os nomes e categorias -->
+    <!-- Categorias -->
     <div class="top-categories">
         <ul>
             <li><a href="#">Casa & Cozinha</a></li>
@@ -25,22 +25,16 @@
         </ul>
     </div>
 
-    <!-- Container Header -->
+    <!-- Header -->
     <div class="header-container">
-        <input type="text" placeholder="Buscar produtos...">
+        <input type="text" id="busca" placeholder="Buscar produtos...">
         <div class="menu-icons">
             <a href="#" id="carrinho" class="carrinho-icon" onclick="toggleCarrinho()">
                 <img src="img/carrinho.png" alt="Carrinho">
                 <span id="qtd-carrinho">0</span>
             </a>
-            <a href="https://wa.me/5511980946705" target="_blank" class="whatsapp-flutuante">
-                <img src="img/whatsapp.png" alt="WhatsApp">
-            </a>
         </div>
     </div>
-
-    <!-- Menu de navegação -->
-    <div class="menu"></div>
 
     <!-- Banner -->
     <div class="banner">
@@ -48,11 +42,9 @@
     </div>
 
     <!-- Produtos -->
-    <div class="produtos" id="produtos">
-        <!-- Produtos serão listados aqui -->
-    </div>
+    <div class="produtos" id="produtos"></div>
 
-    <!-- Carrinho Flutuante -->
+    <!-- Carrinho Flutuante Inferior Esquerdo -->
     <div class="carrinho" id="carrinho-div">
         <h2>Meu Carrinho</h2>
         <div id="itens-carrinho"></div>
@@ -60,32 +52,23 @@
         <button id="btn-finalizar">Finalizar Compra</button>
     </div>
 
-    <!-- Mensagem de Confirmação -->
-    <div id="mensagem-confirmacao" class="mensagem-confirmacao">
-        Produto adicionado ao carrinho!
+    <!-- Botão para abrir carrinho pequeno -->
+    <div class="mini-carrinho-btn" onclick="toggleCarrinho()">
+        🛒 <span id="qtd-carrinho-mini">0</span>
     </div>
 
+    <!-- Mensagem de Confirmação -->
+    <div id="mensagem-confirmacao" class="mensagem-confirmacao">✅ Produto adicionado ao carrinho!</div>
+
+    <!-- WhatsApp flutuante -->
+    <a href="https://wa.me/5511980946705" target="_blank" class="whatsapp-flutuante">
+        <img src="img/whatsapp.png" alt="WhatsApp">
+    </a>
+
     <footer>
-        <p>&copy; 2025 Loja Virtual. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Utimix Loja. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-<!-- Restante do HTML sem alteração... -->
-
-<!-- WhatsApp flutuante com animação -->
-<a href="https://wa.me/5511980946705" target="_blank" class="whatsapp-flutuante" id="whatsapp-icon">
-    <img src="img/whatsapp.png" alt="WhatsApp">
-</a>
-
-<!-- Restante do HTML sem alteração... -->
-<style>
-.whatsapp-flutuante {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    animation: pulse 2s infinite;
-}   
